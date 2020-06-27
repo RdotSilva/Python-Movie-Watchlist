@@ -11,3 +11,5 @@ INSERT_MOVIES = (
 SELECT_ALL_MOVIES = "SELECT * FROM movies;"
 
 SELECT_UPCOMING_MOVIES = "SELECT * FROM movies WHERE release_timestamp > ?;"
+
+SELECT_WATCHED_MOVIES = "SELECT * FROM movies WHERE watched = 1;"
