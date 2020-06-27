@@ -8,3 +8,4 @@ INSERT_MOVIES = (
     "INSERT INTO movies (title, release_timestamp, watched) VALUES (?, ?, 0);"
 )
 
+SELECT_ALL_MOVIES = "SELECT * FROM movies;"
