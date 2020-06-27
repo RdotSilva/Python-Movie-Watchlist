@@ -18,3 +18,11 @@ SELECT_UPCOMING_MOVIES = "SELECT * FROM movies WHERE release_timestamp > ?;"
 SELECT_WATCHED_MOVIES = "SELECT * FROM movies WHERE watched = 1;"
 
 connection = sqlite3.connect("data.db")
+
+
+def create_tables():
+    """
+    Create the database tables
+    """
+    with connection:
+        connection.execute(CREATE_MOVIES_TABLE)
