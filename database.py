@@ -26,3 +26,12 @@ def create_tables():
     """
     with connection:
         connection.execute(CREATE_MOVIES_TABLE)
+
+
+def add_movie(title, release_timestamp):
+    """
+    Add movie to database
+    Movie will default to "not watched"
+    """
+    with connection:
+        connection.execute(INSERT_MOVIES, (title, release_timestamp))
