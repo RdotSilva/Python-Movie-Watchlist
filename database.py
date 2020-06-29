@@ -35,3 +35,14 @@ def add_movie(title, release_timestamp):
     """
     with connection:
         connection.execute(INSERT_MOVIES, (title, release_timestamp))
+
+
+def get_movies(upcoming=False):
+    """
+    Get all movies 
+    """
+    with connection:
+        # Using cursor to get results
+        cursor = connection.cursor()
+        cursor.execute(SELECT_ALL_MOVIES)
+        return cursor.fetchall()
