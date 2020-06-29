@@ -50,3 +50,13 @@ def get_movies(upcoming=False):
         else:
             cursor.execute(SELECT_ALL_MOVIES)
         return cursor.fetchall()
+
+
+def get_watched_movies():
+    """
+    Get all movies that are marked as watched
+    """
+    with connection:
+        cursor = connection.cursor()
+        cursor.execute(SELECT_WATCHED_MOVIES)
+        return cursor.fetchall()
