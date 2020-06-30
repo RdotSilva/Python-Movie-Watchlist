@@ -16,6 +16,7 @@ welcome = "Welcome to the watchlist app!"
 print(welcome)
 database.create_tables()
 
+
 def prompt_add_movie():
     """
     Prompt a user to add new movie
@@ -28,9 +29,11 @@ def prompt_add_movie():
     database.add_movie(title, timestamp)
 
 
-while (user_input := input(menu)) != "6":
+user_input = input(menu)
+
+while user_input != "6":
     if user_input == "1":
-        pass
+        prompt_add_movie()
     elif user_input == "2":
         pass
     elif user_input == "3":
