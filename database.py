@@ -7,7 +7,7 @@ CREATE_MOVIES_TABLE = """CREATE TABLE IF NOT EXISTS movies (
     watched INTEGER
 ); """
 
-INSERT_MOVIES = (
+INSERT_MOVIE = (
     "INSERT INTO movies (title, release_timestamp, watched) VALUES (?, ?, 0);"
 )
 
@@ -36,7 +36,7 @@ def add_movie(title, release_timestamp):
     Movie will default to "not watched"
     """
     with connection:
-        connection.execute(INSERT_MOVIES, (title, release_timestamp))
+        connection.execute(INSERT_MOVIE, (title, release_timestamp))
 
 
 def get_movies(upcoming=False):
