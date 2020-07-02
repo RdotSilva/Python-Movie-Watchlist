@@ -64,7 +64,10 @@ while user_input != "6":
         print_movie_list("All", movies)
         user_input = input(menu)
     elif user_input == "4":
-        pass
+        prompt_watch_movie()
+        movies = database.get_watched_movies()
+        print_movie_list("Watched", movies)
+        user_input = input(menu)
     elif user_input == "5":
         pass
     else:
