@@ -19,6 +19,8 @@ SELECT_WATCHED_MOVIES = "SELECT * FROM movies WHERE watched = 1;"
 
 SET_MOVIE_WATCHED = "UPDATE movies set watched = 1 WHERE title = ?;"
 
+DELETE_MOVIE = "DELETE FROM movies WHERE title = ?;"
+
 connection = sqlite3.connect("data.db")
 
 
