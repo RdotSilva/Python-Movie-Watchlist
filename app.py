@@ -44,12 +44,15 @@ user_input = input(menu)
 while user_input != "6":
     if user_input == "1":
         prompt_add_movie()
+        user_input = input(menu)
     elif user_input == "2":
         movies = database.get_movies(True)
         print_movie_list("Upcoming", movies)
+        user_input = input(menu)
     elif user_input == "3":
-        movies = database.get_movies(True)
+        movies = database.get_movies()
         print_movie_list("All", movies)
+        user_input = input(menu)
     elif user_input == "4":
         pass
     elif user_input == "5":
