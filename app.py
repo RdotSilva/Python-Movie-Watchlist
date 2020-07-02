@@ -41,6 +41,14 @@ def print_movie_list(heading, movies):
     print("--- \n")
 
 
+def prompt_watch_movie():
+    """
+    Mark a movie as watched
+    """
+    movie_title = input("Enter movie title you've watched: ")
+    database.watch_movie(movie_title)
+
+
 user_input = input(menu)
 
 while user_input != "6":
