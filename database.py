@@ -34,6 +34,7 @@ def create_tables():
     """
     with connection:
         connection.execute(CREATE_MOVIES_TABLE)
+        connection.execute(CREATE_WATCHLIST_TABLE)
 
 
 def add_movie(title, release_timestamp):
