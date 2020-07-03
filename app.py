@@ -66,10 +66,10 @@ while user_input != "6":
         user_input = input(menu)
     elif user_input == "4":
         prompt_watch_movie()
-        movies = database.get_watched_movies()
-        print_movie_list("Watched", movies)
         user_input = input(menu)
     elif user_input == "5":
-        pass
+        username = input("Username: ")
+        movies = database.get_watched_movies(username)
+        print_movie_list("Watched", movies)
     else:
         print("Invalid input, please try again!")

@@ -70,11 +70,11 @@ def watch_movie(username, title):
         connection.execute(INSERT_WATCHED_MOVIE, (username, title))
 
 
-def get_watched_movies():
+def get_watched_movies(username):
     """
     Get all movies that are marked as watched
     """
     with connection:
         cursor = connection.cursor()
-        cursor.execute(SELECT_WATCHED_MOVIES)
+        cursor.execute(SELECT_WATCHED_MOVIES, (username,))
         return cursor.fetchall()
