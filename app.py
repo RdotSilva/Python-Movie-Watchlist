@@ -45,8 +45,9 @@ def prompt_watch_movie():
     """
     Mark a movie as watched
     """
+    username = input("Username: ")
     movie_title = input("Enter movie title you've watched: ")
-    database.watch_movie(movie_title)
+    database.watch_movie(username, movie_title)
 
 
 user_input = input(menu)
