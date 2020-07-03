@@ -6,6 +6,11 @@ CREATE_MOVIES_TABLE = """CREATE TABLE IF NOT EXISTS movies (
     release_timestamp REAL
 );"""
 
+CREATE_WATCHLIST_TABLE = """CREATE TABLE IF NOT EXISTS watched (
+    watcher_name TEXT,
+    title TEXT
+);"""
+
 INSERT_MOVIE = "INSERT INTO movies (title, release_timestamp) VALUES (?, ?, 0);"
 
 SELECT_ALL_MOVIES = "SELECT * FROM movies;"
