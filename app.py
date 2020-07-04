@@ -58,6 +58,11 @@ def prompt_watch_movie():
     database.watch_movie(username, movie_id)
 
 
+def prompt_add_user():
+    username = input("Username: ")
+    database.add_user(username)
+
+
 user_input = input(menu)
 
 while user_input != "7":
@@ -81,5 +86,6 @@ while user_input != "7":
         print_watched_movie_list(username, movies)
     elif user_input == "6":
         prompt_add_user()
+        user_input = input(menu)
     else:
         print("Invalid input, please try again!")
