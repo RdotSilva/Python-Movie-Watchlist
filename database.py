@@ -2,6 +2,7 @@ import datetime
 import sqlite3
 
 CREATE_MOVIES_TABLE = """CREATE TABLE IF NOT EXISTS movies (
+    id INTEGER PRIMARY KEY,
     title TEXT,
     release_timestamp REAL
 );"""
