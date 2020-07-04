@@ -34,10 +34,10 @@ def print_movie_list(heading, movies):
     Print list of upcoming movies
     """
     print(f"-- {heading} Movies --")
-    for movie in movies:
-        movie_date = datetime.datetime.fromtimestamp(movie[1])
+    for _id, title, release_date in movies:
+        movie_date = datetime.datetime.fromtimestamp(release_date)
         human_date = movie_date.strftime("%b %d %Y")
-        print(f"{movie[0]} (on {human_date})")
+        print(f"{_id}: {title} (on {human_date})")
     print("--- \n")
 
 
