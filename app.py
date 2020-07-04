@@ -7,7 +7,8 @@ menu = """Please select one of the following options:
 3) View all movies
 4) Watch a movie
 5) View watched movies.
-6) Exit.
+6) Add user to the app.
+7) Exit.
 
 Your selection: """
 welcome = "Welcome to the watchlist app!"
@@ -59,7 +60,7 @@ def prompt_watch_movie():
 
 user_input = input(menu)
 
-while user_input != "6":
+while user_input != "7":
     if user_input == "1":
         prompt_add_movie()
         user_input = input(menu)
@@ -78,5 +79,7 @@ while user_input != "6":
         username = input("Username: ")
         movies = database.get_watched_movies(username)
         print_watched_movie_list(username, movies)
+    elif user_input == "6":
+        prompt_add_user()
     else:
         print("Invalid input, please try again!")
