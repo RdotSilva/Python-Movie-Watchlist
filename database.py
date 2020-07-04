@@ -69,13 +69,12 @@ def get_movies(upcoming=False):
         return cursor.fetchall()
 
 
-def watch_movie(username, title):
+def watch_movie(username, movie_id):
     """
     Set a movie to watched
     """
     with connection:
-        connection.execute(DELETE_MOVIE, (title,))
-        connection.execute(INSERT_WATCHED_MOVIE, (username, title))
+        connection.execute(INSERT_WATCHED_MOVIE, (username, movie_id))
 
 
 def get_watched_movies(username):
