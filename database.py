@@ -7,6 +7,10 @@ CREATE_MOVIES_TABLE = """CREATE TABLE IF NOT EXISTS movies (
     release_timestamp REAL
 );"""
 
+CREATE_USERS_TABLE = """CREATE TABLE IF NOT EXISTS users (
+    username TEXT PRIMARY KEY
+);"""
+
 CREATE_WATCHLIST_TABLE = """CREATE TABLE IF NOT EXISTS watched (
     watcher_name TEXT,
     title TEXT
