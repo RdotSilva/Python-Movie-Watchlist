@@ -20,6 +20,8 @@ CREATE_WATCHED_TABLE = """CREATE TABLE IF NOT EXISTS watched (
 
 INSERT_MOVIE = "INSERT INTO movies (title, release_timestamp) VALUES (?, ?, 0);"
 
+INSERT_USER = "INSERT INTO users (username) VALUES (?)"
+
 SELECT_ALL_MOVIES = "SELECT * FROM movies;"
 
 SELECT_UPCOMING_MOVIES = "SELECT * FROM movies WHERE release_timestamp > ?;"
