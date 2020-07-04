@@ -47,6 +47,14 @@ def create_tables():
         connection.execute(CREATE_WATCHED_TABLE)
 
 
+def add_user(username):
+    """
+    Add a user to the database
+    """
+    with connection:
+        connection.execute(INSERT_USER, (username,))
+
+
 def add_movie(title, release_timestamp):
     """
     Add movie to database
