@@ -26,7 +26,12 @@ SELECT_ALL_MOVIES = "SELECT * FROM movies;"
 
 SELECT_UPCOMING_MOVIES = "SELECT * FROM movies WHERE release_timestamp > ?;"
 
-SELECT_WATCHED_MOVIES = "SELECT * FROM watched WHERE watcher_name = ?;"
+SELECT_WATCHED_MOVIES = """
+SELECT movies.*
+FROM movies
+JOIN watched ON watched.movie_id = movies.id
+JOIN users ON users.username = watched.user_username
+WHERE users.username = ?;"""
 
 SET_MOVIE_WATCHED = "UPDATE movies set watched = 1 WHERE title = ?;"
 
