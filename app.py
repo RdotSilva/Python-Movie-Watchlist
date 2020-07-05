@@ -76,7 +76,7 @@ while user_input != "7":
     elif user_input == "5":
         username = input("Username: ")
         movies = database.get_watched_movies(username)
-        print_watched_movie_list(username, movies)
+        print_movie_list(f"{username}'s watched movies", movies)
     elif user_input == "6":
         prompt_add_user()
         user_input = input(menu)
