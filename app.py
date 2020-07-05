@@ -42,13 +42,6 @@ def print_movie_list(heading, movies):
     print("--- \n")
 
 
-def print_watched_movie_list(username, movies):
-    print(f"-- {username}'s watched movies --")
-    for movie in movies:
-        print(f"{movie[1]}")
-    print("---- \n")
-
-
 def prompt_watch_movie():
     """
     Mark a movie as watched
