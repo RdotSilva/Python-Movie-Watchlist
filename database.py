@@ -51,12 +51,14 @@ connection = sqlite3.connect("data.db")
 
 def create_tables():
     """
-    Create the database tables
+    Create the database tables including:
+    Movies, Users, Watched, and also create release date index
     """
     with connection:
         connection.execute(CREATE_MOVIES_TABLE)
         connection.execute(CREATE_USERS_TABLE)
         connection.execute(CREATE_WATCHED_TABLE)
+        connection.execute(CREATE_RELEASE_INDEX)
 
 
 def add_user(username):
