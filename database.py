@@ -39,6 +39,9 @@ INSERT_WATCHED_MOVIE = "INSERT INTO  watched (user_username, movie_id) VALUES (?
 
 DELETE_MOVIE = "DELETE FROM movies WHERE title = ?;"
 
+SEARCH_MOVIES = "SELECT * FROM movies WHERE title LIKE ?;"
+
+
 connection = sqlite3.connect("data.db")
 
 
