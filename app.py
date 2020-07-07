@@ -66,6 +66,15 @@ def prompt_show_watched_movies():
         print("That user has no watched movies.")
 
 
+def prompt_search_movies():
+    search_term = input("Enter the partial movie title:")
+    movies = database.search_movies(search_term)
+    if movies:
+        print_movie_list("Movies found", movies)
+    else:
+        print("No movies found with that search term")
+
+
 user_input = input(menu)
 
 while user_input != "8":
