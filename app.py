@@ -89,5 +89,8 @@ while user_input != "8":
     elif user_input == "6":
         prompt_add_user()
         user_input = input(menu)
+    elif user_input == "7":
+        prompt_search_movies()
+        user_input = input(menu)
     else:
         print("Invalid input, please try again!")
