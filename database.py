@@ -87,6 +87,16 @@ def get_movies(upcoming=False):
         return cursor.fetchall()
 
 
+def search_movies(search_term):
+    """
+    Search all movies using a specific search term
+    """
+    with connection:
+        cursor = connection.cursor()
+        cursor.execute(SEARCH_MOVIES, (f"%{search_term}%",))
+        return cursor.fetchall()
+
+
 def watch_movie(username, movie_id):
     """
     Set a movie to watched
