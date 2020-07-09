@@ -9,7 +9,8 @@ menu = """Please select one of the following options:
 5) View watched movies.
 6) Add user to the app.
 7) Search for a movie.
-8) Exit
+8) View favorite movies.
+9) Exit
 
 Your selection: """
 welcome = "Welcome to the watchlist app!"
@@ -77,7 +78,7 @@ def prompt_search_movies():
 
 user_input = input(menu)
 
-while user_input != "8":
+while user_input != "9":
     if user_input == "1":
         prompt_add_movie()
         user_input = input(menu)
@@ -100,6 +101,9 @@ while user_input != "8":
         user_input = input(menu)
     elif user_input == "7":
         prompt_search_movies()
+        user_input = input(menu)
+    elif user_input == "8":
+        prompt_show_favorite_movies()
         user_input = input(menu)
     else:
         print("Invalid input, please try again!")
