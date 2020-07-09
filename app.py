@@ -1,5 +1,6 @@
 import datetime
 import database
+from config import url
 
 menu = """Please select one of the following options:
 1) Add new movie.
@@ -14,10 +15,6 @@ menu = """Please select one of the following options:
 
 Your selection: """
 welcome = "Welcome to the watchlist app!"
-
-
-print(welcome)
-database.create_tables()
 
 
 def prompt_add_movie():
