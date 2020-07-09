@@ -1,6 +1,7 @@
 import datetime
 import database
 from config import url
+import psycopg2
 
 menu = """Please select one of the following options:
 1) Add new movie.
@@ -15,6 +16,22 @@ menu = """Please select one of the following options:
 
 Your selection: """
 welcome = "Welcome to the watchlist app!"
+
+
+connection = psycopg2.connect(url)
+
+
+def print_first_user():
+    """
+    Fetch the first user from database and print
+    """
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM users;")
+    first_user = cursor.fetchone()
+
+    print(first_user)
+
+    connection.close()
 
 
 def prompt_add_movie():
