@@ -124,3 +124,13 @@ def get_watched_movies(username):
         cursor = connection.cursor()
         cursor.execute(SELECT_WATCHED_MOVIES, (username,))
         return cursor.fetchall()
+
+
+def get_favorite_movies(username):
+    """
+    Get all movies that are marked as favorites
+    """
+    with connection:
+        cursor = connection.cursor()
+        cursor.execute(SELECT_FAVORITE_MOVIES, (username,))
+        return cursor.fetchall()
