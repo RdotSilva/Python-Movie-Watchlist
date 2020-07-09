@@ -76,6 +76,15 @@ def prompt_search_movies():
         print("No movies found with that search term")
 
 
+def prompt_show_favorite_movies():
+    username = input("Username: ")
+    movies = database.get_favorite_movies(username)
+    if movies:
+        print_movie_list(f"{username}'s favorite movies", movies)
+    else:
+        print("That user has no favorite movies.")
+
+
 user_input = input(menu)
 
 while user_input != "9":
