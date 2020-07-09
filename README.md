@@ -13,6 +13,7 @@ pip install -r requirements.txt
 ## Built With
 
 - Python 3.7
+- PostgreSQL
 
 ## Screenshots
 
