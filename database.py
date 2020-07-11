@@ -1,5 +1,10 @@
+import os
 import datetime
-import sqlite3
+import psycopg2
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 CREATE_MOVIES_TABLE = """CREATE TABLE IF NOT EXISTS movies (
     id INTEGER PRIMARY KEY,
@@ -51,7 +56,7 @@ FROM movies
 WHERE users.username = ?;"""
 
 
-connection = sqlite3.connect("data.db")
+connection = psycopg2.connect(os.environ["DATABASE_URL"])
 
 
 def create_tables():
