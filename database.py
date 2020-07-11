@@ -66,10 +66,10 @@ def create_tables():
     """
     with connection:
         with connection.cursor() as cursor:
-            connection.execute(CREATE_MOVIES_TABLE)
-            connection.execute(CREATE_USERS_TABLE)
-            connection.execute(CREATE_WATCHED_TABLE)
-            connection.execute(CREATE_RELEASE_INDEX)
+            cursor.execute(CREATE_MOVIES_TABLE)
+            cursor.execute(CREATE_USERS_TABLE)
+            cursor.execute(CREATE_WATCHED_TABLE)
+            cursor.execute(CREATE_RELEASE_INDEX)
 
 
 def add_user(username):
@@ -78,7 +78,7 @@ def add_user(username):
     """
     with connection:
         with connection.cursor() as cursor:
-        connection.execute(INSERT_USER, (username,))
+            cursor.execute(INSERT_USER, (username,))
 
 
 def add_movie(title, release_timestamp):
@@ -88,7 +88,7 @@ def add_movie(title, release_timestamp):
     """
     with connection:
         with connection.cursor() as cursor:
-            connection.execute(INSERT_MOVIE, (title, release_timestamp))
+            cursor.execute(INSERT_MOVIE, (title, release_timestamp))
 
 
 def get_movies(upcoming=False):
@@ -121,7 +121,7 @@ def watch_movie(username, movie_id):
     """
     with connection:
         with connection.cursor() as cursor:
-            connection.execute(INSERT_WATCHED_MOVIE, (username, movie_id))
+            cursor.execute(INSERT_WATCHED_MOVIE, (username, movie_id))
 
 
 def get_watched_movies(username):
