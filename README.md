@@ -2,6 +2,18 @@
 
 Command line Python application used to track movies that you have watched or want to watch in the future.
 
+### Prerequisites
+
+You must create a .env file with your PostgreSQL database URL
+
+1. Create a new file in the root folder named: .env
+
+2. Add your PostgreSQL database URL
+
+```
+DATABASE_URL=YourDatabaseURL
+```
+
 ## Requirements
 
 Dependencies are listed in the included requirements.txt file. Install all required dependencies by running this command:
