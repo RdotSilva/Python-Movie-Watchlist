@@ -25,17 +25,17 @@ CREATE_WATCHED_TABLE = """CREATE TABLE IF NOT EXISTS watched (
 
 INSERT_MOVIE = "INSERT INTO movies (name, release_timestamp) VALUES (%s, %s)"
 
-INSERT_USER = "INSERT INTO users (username) VALUES (%s)"
-
 SELECT_ALL_MOVIES = "SELECT * FROM movies;"
 
 SELECT_UPCOMING_MOVIES = "SELECT * FROM movies WHERE release_timestamp > %s;"
 
+INSERT_USER = "INSERT INTO users (username) VALUES (%s)"
+
 SELECT_WATCHED_MOVIES = """
 SELECT movies.*
-FROM movies
-JOIN watched ON watched.movie_id = movies.id
-JOIN users ON users.username = watched.user_username
+FROM users
+JOIN watched ON users.username = watched.user_username
+JOIN movies ON watched.movie_id = movies.id
 WHERE users.username = %s;"""
 
 SET_MOVIE_WATCHED = "UPDATE movies set watched = 1 WHERE title = %s;"
@@ -44,7 +44,7 @@ INSERT_WATCHED_MOVIE = "INSERT INTO  watched (user_username, movie_id) VALUES (%
 
 DELETE_MOVIE = "DELETE FROM movies WHERE title = %s;"
 
-SEARCH_MOVIES = "SELECT * FROM movies WHERE title LIKE %s;"
+SEARCH_MOVIES = """SELECT * FROM movies WHERE name LIKE %s;"""
 
 CREATE_RELEASE_INDEX = (
     "CREATE INDEX IF NOT EXISTS idx_movies_release ON movies(release_timestamp)"
