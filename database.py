@@ -8,7 +8,7 @@ load_dotenv()
 
 CREATE_MOVIES_TABLE = """CREATE TABLE IF NOT EXISTS movies (
     id SERIAL PRIMARY KEY,
-    title TEXT,
+    name TEXT,
     release_timestamp REAL
 );"""
 
@@ -23,7 +23,7 @@ CREATE_WATCHED_TABLE = """CREATE TABLE IF NOT EXISTS watched (
     FOREIGN KEY(movie_id) REFERENCES movies(id)
 );"""
 
-INSERT_MOVIE = "INSERT INTO movies (title, release_timestamp) VALUES (%s, %s, 0);"
+INSERT_MOVIE = "INSERT INTO movies (name, release_timestamp) VALUES (%s, %s)"
 
 INSERT_USER = "INSERT INTO users (username) VALUES (%s)"
 
