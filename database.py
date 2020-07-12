@@ -72,15 +72,6 @@ def create_tables():
             cursor.execute(CREATE_RELEASE_INDEX)
 
 
-def add_user(username):
-    """
-    Add a user to the database
-    """
-    with connection:
-        with connection.cursor() as cursor:
-            cursor.execute(INSERT_USER, (username,))
-
-
 def add_movie(title, release_timestamp):
     """
     Add movie to database
@@ -88,7 +79,7 @@ def add_movie(title, release_timestamp):
     """
     with connection:
         with connection.cursor() as cursor:
-            cursor.execute(INSERT_MOVIE, (title, release_timestamp))
+            cursor.execute(INSERT_MOVIE, (name, release_timestamp))
 
 
 def get_movies(upcoming=False):
@@ -105,14 +96,13 @@ def get_movies(upcoming=False):
             return cursor.fetchall()
 
 
-def search_movies(search_term):
+def add_user(username):
     """
-    Search all movies using a specific search term
+    Add a user to the database
     """
     with connection:
-        cursor = connection.cursor()
-        cursor.execute(SEARCH_MOVIES, (f"%{search_term}%",))
-        return cursor.fetchall()
+        with connection.cursor() as cursor:
+            cursor.execute(INSERT_USER, (username,))
 
 
 def watch_movie(username, movie_id):
@@ -131,6 +121,16 @@ def get_watched_movies(username):
     with connection:
         with connection.cursor() as cursor:
             cursor.execute(SELECT_WATCHED_MOVIES, (username,))
+            return cursor.fetchall()
+
+
+def search_movies(search_term):
+    """
+    Search all movies using a specific search term
+    """
+    with connection:
+        with connection.cursor() as cursor:
+            cursor.execute(SEARCH_MOVIES, (f"%{search_term}%",))
             return cursor.fetchall()
 
 
