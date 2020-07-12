@@ -20,6 +20,8 @@ welcome = "Welcome to the watchlist app!"
 
 connection = psycopg2.connect(url)
 
+database.create_tables()
+
 
 def print_first_user():
     """
