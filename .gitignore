@@ -151,3 +151,4 @@ dmypy.json
 
 # Config
 config.py
+config.env
