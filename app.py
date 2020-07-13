@@ -132,3 +132,4 @@ while user_input != "9":
         user_input = input(menu)
     else:
         print("Invalid input, please try again!")
+        user_input = input(menu)
