@@ -101,6 +101,17 @@ def prompt_show_favorite_movies():
         print("That user has no favorite movies.")
 
 
+def prompt_user_exit():
+    """
+    Confirm if a user wants to exit
+    """
+    answer = input("Do you really want to exit?: ")
+    if answer == "y":
+        return
+    if answer == "no":
+        return
+
+
 user_input = input(menu)
 
 while user_input != "9":
