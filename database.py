@@ -1,0 +1,2 @@
+CREATE_POLLS = """CREATE TABLE IF NOT EXISTS polls
+(id SERIAL PRIMARY KEY, title TEXT, owner_username TEXT);"""
