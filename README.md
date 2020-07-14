@@ -1,6 +1,6 @@
-# Python Movie Watchlist
+# Python Quick Poll
 
-Command line Python application used to track movies that you have watched or want to watch in the future.
+Command line Python application that allows users to create polls, view polls, vote on a poll, and check votes on a poll (as a total and percentage)
 
 ### Prerequisites
 
