@@ -16,3 +16,14 @@ WHERE polls.id = %s;"""
 INSERT_OPTION = "INSERT INTO options (option_text, poll_id) VALUES %s;"
 
 INSERT_VOTE = "INSERT INTO votes (username, option_id) VALUES (%s, %s);"
+
+
+def create_tables(connection):
+    """
+    Create all database tables
+    """
+    with connection:
+        with connection.cursor() as cursor:
+            cursor.execute(CREATE_POLLS)
+            cursor.execute(CREATE_OPTIONS)
+            cursor.execute(CREATE_VOTES)
