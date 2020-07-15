@@ -37,3 +37,12 @@ def get_polls(connection):
         with connection.cursor() as cursor:
             cursor.execute(SELECT_ALL_POLLS)
             return cursor.fetchall()
+
+
+def get_latest_poll(connection):
+    """
+    Fetch the latest poll
+    """
+    with connection:
+        with connection.cursor() as cursor:
+            pass
