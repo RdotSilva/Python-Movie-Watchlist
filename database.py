@@ -12,3 +12,7 @@ SELECT_ALL_POLLS = "SELECT * FROM polls;"
 SELECT_POLL_WITH_OPTIONS = """SELECT * FROM polls
 JOIN options ON polls.id = options.poll_id
 WHERE polls.id = %s;"""
+
+INSERT_OPTION = "INSERT INTO options (option_text, poll_id) VALUES %s;"
+
+INSERT_VOTE = "INSERT INTO votes (username, option_id) VALUES (%s, %s);"
