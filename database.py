@@ -27,3 +27,13 @@ def create_tables(connection):
             cursor.execute(CREATE_POLLS)
             cursor.execute(CREATE_OPTIONS)
             cursor.execute(CREATE_VOTES)
+
+
+def get_polls(connection):
+    """
+    Fetch all polls
+    """
+    with connection:
+        with connection.cursor() as cursor:
+            cursor.execute(SELECT_ALL_POLLS)
+            return cursor.fetchall()
