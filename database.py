@@ -65,3 +65,12 @@ def get_poll_and_vote_results(connection, poll_id):
     with connection:
         with connection.cursor() as cursor:
             pass
+
+
+def get_random_poll_vote(connection, option_id):
+    """
+    Fetch random poll votes
+    """
+    with connection:
+        with connection.cursor() as cursor:
+            pass
