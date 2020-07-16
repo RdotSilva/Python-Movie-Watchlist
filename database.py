@@ -83,3 +83,12 @@ def create_poll(connection, title, owner, options):
     with connection:
         with connection.cursor() as cursor:
             pass
+
+
+def add_poll_vote(connection, username, option_id):
+    """
+    Add a vote to a poll
+    """
+    with connection:
+        with connection.cursor() as cursor:
+            cursor.execute(INSERT_VOTE, (username, option_id))
