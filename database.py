@@ -50,9 +50,18 @@ def get_latest_poll(connection):
 
 def get_poll_details(connection, poll_id):
     """
-    Get details for a specific poll
+    Fetch details for a specific poll
     """
     with connection:
         with connection.cursor() as cursor:
             cursor.execute(SELECT_POLL_WITH_OPTIONS, (poll_id,))
             return cursor.fetchall()
+
+
+def get_poll_and_vote_results(connection, poll_id):
+    """
+    Fetch poll with vote results
+    """
+    with connection:
+        with connection.cursor() as cursor:
+            pass
