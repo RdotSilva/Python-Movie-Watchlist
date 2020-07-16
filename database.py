@@ -74,3 +74,12 @@ def get_random_poll_vote(connection, option_id):
     with connection:
         with connection.cursor() as cursor:
             pass
+
+
+def create_poll(connection, title, owner, options):
+    """
+    Create a poll
+    """
+    with connection:
+        with connection.cursor() as cursor:
+            pass
