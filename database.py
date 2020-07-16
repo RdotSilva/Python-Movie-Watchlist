@@ -46,3 +46,13 @@ def get_latest_poll(connection):
     with connection:
         with connection.cursor() as cursor:
             pass
+
+
+def get_poll_details(connection, poll_id):
+    """
+    Get details for a specific poll
+    """
+    with connection:
+        with connection.cursor() as cursor:
+            cursor.execute(SELECT_POLL_WITH_OPTIONS, (poll_id,))
+            return cursor.fetchall()
