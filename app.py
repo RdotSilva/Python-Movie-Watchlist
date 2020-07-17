@@ -45,3 +45,17 @@ def list_open_polls(connection):
 
     for _id, title, owner in polls:
         print(f"{_id}: {title} (created by {owner})")
+
+
+def prompt_vote_poll(connection):
+    """
+    Prompt user to vote on a poll
+    """
+    poll_id = int(input("Enter poll would you like to vote on: "))
+
+    poll_options = database.get_poll_details(connection, poll_id)
+    _print_poll_options(poll_options)
+
+    option_id = int(input("Enter option you'd like to vote for: "))
+    username = input("Enter the username you'd like to vote as: ")
+    database.add_poll_vote(connection, username, option_id)
