@@ -35,3 +35,13 @@ def prompt_create_poll(connection):
         new_option = input(NEW_OPTION_PROMPT)
 
     database.create_poll(connection, poll_title, poll_owner, options)
+
+
+def list_open_polls(connection):
+    """
+    Print open polls
+    """
+    polls = database.get_polls(connection)
+
+    for _id, title, owner in polls:
+        print(f"{_id}: {title} (created by {owner})")
