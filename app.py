@@ -69,5 +69,17 @@ def print_poll_options(poll_with_options):
         print(f"{option[3]}: {option[4]}")
 
 
-# TODO: Add method to show poll votes. This will allow a user to pick a poll to see votes for and display the vote count
+def show_poll_votes(connection):
+    """
+    Prompt user to select what poll they want to see votes for and list the votes
+    """
+    poll_id = int(input("Enter poll you would like to see votes for: "))
+    try:
+        # This gives us count and percentage of votes for each option in a poll
+        poll_and_votes = database.get_poll_and_vote_results(connection, poll_id)
+    except DivisionByZero:
+        print("No votes yet cast for this poll.")
+    else:
+        for _id, option_text, count, percentage in poll_and_votes:
+            print(f"{option_text} got {count} votes ({percentage:.2f}% of total)")
 
