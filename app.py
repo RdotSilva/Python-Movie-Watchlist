@@ -67,3 +67,7 @@ def print_poll_options(poll_with_options):
     """
     for option in poll_with_options:
         print(f"{option[3]}: {option[4]}")
+
+
+# TODO: Add method to show poll votes. This will allow a user to pick a poll to see votes for and display the vote count
+
