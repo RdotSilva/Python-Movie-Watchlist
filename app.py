@@ -108,3 +108,28 @@ MENU_OPTIONS = {
     "4": show_poll_votes,
     "5": randomize_poll_winner,
 }
+
+
+def menu():
+    """
+    Handles connection to database and prompts main user menu
+    """
+    database_uri = input(DATABASE_PROMPT)
+    if not database_uri:
+        load_dotenv()
+        database_uri = os.environ["DATABASE_URI"]
+
+    connection = psycopg2.connect(database_uri)
+    database.create_tables(connection)
+
+    selection = input(MENU_PROMPT)
+
+    while (selection) != "6":
+        try:
+            MENU_OPTIONS[selection](connection)
+        except KeyError:
+            print("Invalid input selected. Please try again.")
+        selection = input(MENU_PROMPT)
+
+
+menu()
