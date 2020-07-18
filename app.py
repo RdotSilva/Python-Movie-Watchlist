@@ -100,3 +100,11 @@ def randomize_poll_winner(connection):
     winner = database.get_random_poll_vote(connection, option_id)
     print(f"The randomly selected winner is {winner[0]}.")
 
+
+MENU_OPTIONS = {
+    "1": prompt_create_poll,
+    "2": list_open_polls,
+    "3": prompt_vote_poll,
+    "4": show_poll_votes,
+    "5": randomize_poll_winner,
+}
