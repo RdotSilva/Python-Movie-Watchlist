@@ -21,6 +21,10 @@ WHERE polls.id = (
     SELECT id FROM polls ORDER BY id DESC LIMIT 1
 );"""
 
+SELECT_RANDOM_VOTE = (
+    "SELECT * FROM votes WHERE option_id = %s ORDER BY RANDOM() LIMIT 1;"
+)
+
 INSERT_POLL_RETURN_ID = (
     "INSERT INTO polls (title, owner_username) VALUES (%s, %s) RETURNING id;",
 )
