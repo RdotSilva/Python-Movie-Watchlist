@@ -15,6 +15,12 @@ SELECT_POLL_WITH_OPTIONS = """SELECT * FROM polls
 JOIN options ON polls.id = options.poll_id
 WHERE polls.id = %s;"""
 
+SELECT_LATEST_POLL = """SELECT * FROM pollS
+JOIN options ON polls.id = options.poll_id
+WHERE polls.id = (
+    SELECT id FROM polls ORDER BY id DESC LIMIT 1
+);"""
+
 INSERT_POLL_RETURN_ID = (
     "INSERT INTO polls (title, owner_username) VALUES (%s, %s) RETURNING id;",
 )
