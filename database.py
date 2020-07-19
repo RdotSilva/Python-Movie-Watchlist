@@ -82,7 +82,8 @@ def create_poll(connection, title, owner, options):
     """
     with connection:
         with connection.cursor() as cursor:
-            pass
+            cursor.execute("INSERT INTO polls VALUES (%s, %s);", (title, owner))
+            cursor.execute("SELECT id FROM polls ORDER BY id DESC LIMIT 1;")
 
 
 def add_poll_vote(connection, username, option_id):
