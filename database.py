@@ -85,6 +85,12 @@ def create_poll(connection, title, owner, options):
             cursor.execute("INSERT INTO polls VALUES (%s, %s);", (title, owner))
             cursor.execute("SELECT id FROM polls ORDER BY id DESC LIMIT 1;")
 
+            poll_id = cursor.fetchone()[0]
+            option_values = [(option_text, poll_id) for option_text in options]
+
+            for option_value in option_values:
+                cursor.execute(INSERT_OPTION, option_value)
+
 
 def add_poll_vote(connection, username, option_id):
     """
