@@ -21,6 +21,17 @@ WHERE polls.id = (
     SELECT id FROM polls ORDER BY id DESC LIMIT 1
 );"""
 
+
+SELECT_POLL_VOTE_DETAILS = """SELECT
+    options.id,
+    options.options_text,
+    COUNT(votes.option_id) AS vote_count,
+    COUNT(votes.option_id) / SUM(COUNT(votes.option_id)) OVER() * 100.0 AS vote_percentage
+FROM options
+LEFT JOIN votes ON options.id = votes.option_id
+WHERE options.poll_id = 1
+GROUP BY options.id;"""
+
 SELECT_RANDOM_VOTE = (
     "SELECT * FROM votes WHERE option_id = %s ORDER BY RANDOM() LIMIT 1;"
 )
