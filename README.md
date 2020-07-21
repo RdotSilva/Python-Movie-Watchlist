@@ -14,6 +14,18 @@ You must create a .env file with your PostgreSQL database URL
 DATABASE_URL=YourDatabaseURL
 ```
 
+## Running the application
+
+1. Run the Python app in the command line by typing
+
+```
+python app.py
+```
+
+2. Enter database information or leave blank to use the database URI from .env file
+
+3. Select your choice from the command line menu
+
 ## Requirements
 
 Dependencies are listed in the included requirements.txt file. Install all required dependencies by running this command:
