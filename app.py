@@ -42,6 +42,22 @@ def prompt_create_poll(connection):
     # TODO: Fix this method. Getting error: TypeError: argument 1 must be a string or unicode object: got tuple instead
 
 
+def prompt_create_super_user(connection):
+    """
+    Prompt super user creation
+    """
+    poll_owner = input("Enter poll owner: ")
+    options = []
+
+    new_option = input(NEW_OPTION_PROMPT)
+
+    while len(new_option) != 0:
+        options.append(new_option)
+        new_option = input(NEW_OPTION_PROMPT)
+
+    database.create_poll(connection, poll_owner)
+
+
 def list_open_polls(connection):
     """
     Print open polls
