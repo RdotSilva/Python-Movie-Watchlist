@@ -16,7 +16,8 @@ MENU_PROMPT = """-- Menu --
 6) Remove a poll
 7) Edit a poll
 8) Copy a poll
-9) Exit
+9) Add a super user
+10) Exit
 
 Enter your choice: """
 
