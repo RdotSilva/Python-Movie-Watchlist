@@ -29,7 +29,7 @@ SELECT_POLL_VOTE_DETAILS = """SELECT
     COUNT(votes.option_id) / SUM(COUNT(votes.option_id)) OVER() * 100.0 AS vote_percentage
 FROM options
 LEFT JOIN votes ON options.id = votes.option_id
-WHERE options.poll_id = 1
+WHERE options.poll_id = %s
 GROUP BY options.id;"""
 
 SELECT_RANDOM_VOTE = (
