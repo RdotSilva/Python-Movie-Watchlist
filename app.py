@@ -13,7 +13,10 @@ MENU_PROMPT = """-- Menu --
 3) Vote on a poll
 4) Show poll votes
 5) Select a random winner from a poll option
-6) Exit
+6) Remove a poll
+7) Edit a poll
+8) Copy a poll
+9) Exit
 
 Enter your choice: """
 
