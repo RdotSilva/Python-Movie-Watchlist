@@ -39,6 +39,8 @@ def prompt_create_poll(connection):
 
     database.create_poll(connection, poll_title, poll_owner, options)
 
+    # TODO: Fix this method. Getting error: TypeError: argument 1 must be a string or unicode object: got tuple instead
+
 
 def list_open_polls(connection):
     """
