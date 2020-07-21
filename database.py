@@ -127,3 +127,13 @@ def add_poll_vote(connection, username, option_id):
     with connection:
         with connection.cursor() as cursor:
             cursor.execute(INSERT_VOTE, (username, option_id))
+
+
+def add_super_user(connection, username):
+    """
+    Add a super user to database.
+    Super users votes count as 2.
+    """
+    with connection:
+        with connection.cursor() as cursor:
+            pass
